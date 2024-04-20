@@ -21,7 +21,7 @@ HTML links are defined with the <a> tag -->
 HTML images are defined with the <img> tag. The source file (src), alternative text (alt), width, and height are provided as attributes.
 The <img> tag should also contain the width and height attributes, which specify the width and height of the image (in pixels)
 
-View HTML Source Code:
+<!-- View HTML Source Code: -->
 Click CTRL + U in an HTML page, or right-click on the page and select "View Page Source". This will open a new tab containing the HTML source code of the page.
 
 <html> Defines the root of an HTML document
@@ -29,7 +29,7 @@ Click CTRL + U in an HTML page, or right-click on the page and select "View Page
 <h1> to <h6> Defines HTML headings, <h1> defines the most important heading. <h6> defines the least important heading.
 
 
-HTML Attributes
+<!-- HTML Attributes -->
 All HTML elements can have attributes
 Attributes provide additional information about elements
 Attributes are always specified in the start tag
@@ -48,6 +48,7 @@ The style attribute is used to add styles to an element, such as color, font, si
 The title attribute defines some extra information about an element.
 The value of the title attribute will be displayed as a tooltip when you mouse over the element
 <p title="I'm a tooltip">This is a paragraph.</p>
+<a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a>
 
 All HTML elements can have attributes
 The href attribute of <a> specifies the URL of the page the link goes to
@@ -84,3 +85,440 @@ Inline - by using the style attribute inside HTML elements
 Internal - by using a <style> element in the <head> section
 External - by using a <link> element to link to an external CSS file
 
+/* HTML Links - The target Attribute */
+By default, the linked page will be displayed in the current browser window. To change this, you must specify another target for the link.
+The target attribute specifies where to open the linked document.
+The target attribute can have one of the following values:
+
+_self - Default. Opens the document in the same window/tab as it was clicked
+_blank - Opens the document in a new window or tab
+_parent - Opens the document in the parent frame
+_top - Opens the document in the full body of the window
+
+
+/* Button as a Link */
+To use an HTML button as a link, you have to add some JavaScript code.
+JavaScript allows you to specify what happens at certain events, such as a click of a button
+
+<button onclick="document.location='default.asp'">HTML Tutorial</button>
+
+/* HTML Link Colors */
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
+/* Create a Bookmark in HTML */
+Bookmarks can be useful if a web page is very long.
+To create a bookmark - first create the bookmark, then add a link to it.
+When the link is clicked, the page will scroll down or up to the location with the bookmark.
+
+<h2 id="C4">Chapter 4</h2>
+<a href="#C4">Jump to Chapter 4</a>
+<a href="html_demo.html#C4">Jump to Chapter 4</a>
+
+You can also add a link to a bookmark on another page: <a href="html_demo.html#C4">Jump to Chapter 4</a>
+
+
+/* Image Floating */
+<p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+The image will float to the right of the text.</p>
+
+<p><img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+The image will float to the left of the text.</p>
+
+
+/* HTML Image Maps */
+The HTML <map> tag defines an image map. An image map is an image with clickable areas. The areas are defined with one or more <area> tags.
+
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+</map>
+
+
+/* Background Image on a HTML element */
+To add a background image on an HTML element, use the HTML style attribute and the CSS background-image property:
+<p style="background-image: url('img_girl.jpg');">
+You can also specify the background image in the <style> element, in the <head> section:
+
+<style>
+p {
+  background-image: url('img_girl.jpg');
+}
+</style>
+
+
+To avoid the background image from repeating itself, set the background-repeat property to no-repeat.
+<style>
+    body {
+      background-image: url('example_img_girl.jpg');
+      background-repeat: no-repeat;
+    }
+</style>
+
+<!-- Background Cover -->
+<style>
+    body {
+      background-image: url('img_girl.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    </style>
+
+<!-- Background Stretch -->
+<style>
+    body {
+      background-image: url('img_girl.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    </style>
+
+
+  <!-- Favicon in HTML -->
+  You can use any image you like as your favicon. You can also create your own favicon on sites like https://www.favicon.cc.
+  add a <link> element to your "index.html" file, after the <title>
+  <head>
+    <title>My Page Title</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+
+
+  <!-- HTML Table -->
+  <table>
+    <tr>table row
+      <th>Company</th>table header
+    </tr>
+    <tr>table row
+      <!-- A table cell can contain all sorts of HTML elements: text, images, lists, links, other tables, etc. -->
+      <td>Alfreds Futterkiste</td> table data
+    </tr>
+  </table>
+
+  <!-- How To Add a Border on CSS-->
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+
+Collapsed Table Borders
+To avoid having double borders like in the example above, set the CSS border-collapse property to collapse.
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  <!-- Style Table Borders -->
+  table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+  }
+  th, td {
+    background-color: #96D4D4;
+  }
+
+  Round Table Borders
+  table, th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  Skip the border around the table by leaving out table from the css selector
+  th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  <!-- Dotted Table Border -->
+  th, td {
+    border-style: dotted;
+  }
+
+dotted     
+dashed     
+solid     
+double     
+groove     
+ridge     
+inset     
+outset     
+none     
+hidden 
+
+<!-- Border Color  -->
+th, td {
+    border-color: #96D4D4;
+  }
+
+<!-- HTML Table Sizes -->
+<table style="width:100%">
+    <th style="width:70%">Firstname</th>
+    <tr style="height:200px"></tr>
+</table>
+
+<!-- Align Table Headers -->
+th {
+    text-align: left;
+  }
+
+  <!-- Header for Multiple Columns -->
+  <table>
+    <tr>
+      <th colspan="2">Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+    </tr>
+  </table>
+
+  <!-- Table Caption -->
+  <table style="width:100%">
+    <caption>Monthly savings</caption>
+    <tr>
+      <th>Month</th>
+      <th>Savings</th>
+    </tr>
+    <tr>
+      <td>January</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>$50</td>
+    </tr>
+  </table>
+
+  <!-- HTML Table - Colspan and HTML Table - Rowspan -->
+  <table>
+    <tr>
+      <th colspan="2">Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>57</td>
+    </tr>
+  </table>
+
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <td>Jill</td>
+    </tr>
+    <tr>
+      <th rowspan="2">Phone</th>
+      <td>555-1234</td>
+    </tr>
+    <tr>
+      <td>555-8745</td>
+  </tr>
+  </table>
+
+  <!-- Multiple Col Elements -->
+  <table style="width: 100%;">
+    <colgroup>
+      <col span="2" style="background-color: #D6EEEE">
+      <col span="3" style="background-color: pink">
+    </colgroup>
+  <tr>
+  <th>MON</th>
+  <th>TUE</th>
+  <th>WED</th>
+  <th>THU</th>
+  <th>FRI</th>
+  <th>SAT</th>
+  <th>SUN</th>
+  </tr>
+  <tr>
+
+<!-- HTML Block and Inline Elements -->
+Every HTML element has a default display value, depending on what type of element it is.
+The two most common display values are block and inline.
+
+<!-- Block-level Elements -->
+A block-level element always starts on a new line, and the browsers automatically add some space (a margin) before and after the element.
+A block-level element always takes up the full width available (stretches out to the left and right as far as it can).
+Two commonly used block elements are: <p> and <div>.
+    Here are the block-level elements in HTML:
+
+    <address><article><aside><blockquote><canvas><dd><div><dl><dt><fieldset><figcaption><figure><footer><form><h1>-<h6><header><hr><li>
+    <main><nav><noscript><ol><p><pre><section><table><tfoot><ul><video>
+
+<!-- Inline Elements -->
+An inline element does not start on a new line.
+An inline element only takes up as much width as necessary.
+
+Here are the inline elements in HTML:
+
+<a><abbr><acronym><b><bdo><big><br><button><cite><code><dfn><em><i><img><input><kbd><label><map><object><output><q><samp><script><select>
+<small><span><strong><sub><sup><textarea><time><tt><var>
+
+
+
+// Center align a <div> element
+
+<style>
+div {
+  width:300px;
+  margin:auto;
+}
+</style>
+
+// There are different methods for aligning elements side by side, all include some CSS styling. We will look at the most common methods
+Inline-block & Flex & Grid
+
+<style>
+div {
+  width: 30%;
+  display: inline-block;
+}
+</style>
+
+<style>
+.mycontainer {
+  display: flex;
+}
+.mycontainer > div {
+  width:33%;
+}
+</style>
+
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+</style>
+
+
+// class Attribute in JavaScript 
+<script>
+function myFunction() {
+  var x = document.getElementsByClassName("city");
+  for (var i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+}
+</script>
+
+
+// id Attribute
+Note: The id name is case sensitive!
+Note: The id name must contain at least one character, cannot start with a number, and must not contain whitespaces (spaces, tabs, etc.).
+Difference Between Class and ID
+A class name can be used by multiple HTML elements, while an id name must only be used by one HTML element within the page.
+
+<script>
+function displayResult() {
+  document.getElementById("myHeader").innerHTML = "Have a nice day!";
+}
+</script>
+
+// HTML Iframes
+<iframe src="url" height="200" width="300" style="border:2px solid red;" title="description"></iframe>
+
+// Iframe - Target for a Link
+<iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"></iframe>
+
+<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+
+// HTML File Paths
+<img src="picture.jpg">	The "picture.jpg" file is located in the same folder as the current page
+<img src="images/picture.jpg">	The "picture.jpg" file is located in the images folder in the current folder
+<img src="/images/picture.jpg">	The "picture.jpg" file is located in the images folder at the root of the current web
+<img src="../picture.jpg">	The "picture.jpg" file is located in the folder one level up from the current folder
+
+
+// Setting the viewport to make your website look good on all devices:
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+// HTML Responsive Web Design
+If the CSS width property is set to 100%, the image will be responsive and scale up and down
+If the max-width property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size
+
+<!-- Change Background based on Viewport -->
+<picture>
+    <source media="(min-width: 650px)" srcset="img_food.jpg">
+    <source media="(min-width: 465px)" srcset="img_car.jpg">
+    <img src="img_girl.jpg" style="width:auto;">
+  </picture>
+
+// Responsive Text Size
+The text size can be set with a "vw" unit, which means the "viewport width".
+That way the text size will follow the size of the browser window
+
+<h1 style="font-size:10vw">Hello World</h1>
+
+// Semantic Elements in HTML
+
+<article>	Defines independent, self-contained content
+<aside>	Defines content aside from the page content
+<details>	Defines additional details that the user can view or hide
+<figcaption>	Defines a caption for a <figure> element
+<figure>	Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+<footer>	Defines a footer for a document or section
+<header>	Specifies a header for a document or section
+<main>	Specifies the main content of a document
+<mark>	Defines marked/highlighted text
+<nav>	Defines navigation links
+<section>	Defines a section in a document
+<summary>	Defines a visible heading for a <details> element
+<time>	Defines a date/time
+
+
+// HTML Character Entities
+non-breaking space	&nbsp;	&#160;	
+<	less than	&lt;	&#60;	
+>	greater than	&gt;	&#62;	
+&	ampersand	&amp;	&#38;	
+"	double quotation mark	&quot;	&#34;	
+'	single quotation mark	&apos;	&#39;	
+¢	cent	&cent;	&#162;	
+£	pound	&pound;	&#163;	
+¥	yen	&yen;	&#165;	
+€	euro	&euro;	&#8364;	
+©	copyright	&copy;	&#169;	
+®	trademark	&reg;	&#174;
+←	&#8592;	&larr;	LEFT ARROW	
+↑	&#8593;	&uarr;	UP ARROW	
+→	&#8594;	&rarr;	RIGHT ARROW	
+↓	&#8595;	&darr;	DOWN ARROW
