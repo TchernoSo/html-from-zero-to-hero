@@ -136,6 +136,8 @@ When the link is clicked, the page will scroll down or up to the location with t
 
 You can also add a link to a bookmark on another page: <a href="html_demo.html#C4">Jump to Chapter 4</a>
 
+/* Make an Element Draggable */
+<img draggable="true">
 
 /* Image Floating */
 <p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
@@ -468,8 +470,6 @@ function displayResult() {
 <img src="../picture.jpg">	The "picture.jpg" file is located in the folder one level up from the current folder
 
 
-// Setting the viewport to make your website look good on all devices:
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 // HTML Responsive Web Design
 If the CSS width property is set to 100%, the image will be responsive and scale up and down
@@ -649,3 +649,43 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
 </iframe>
+
+// HTML Geolocation API
+he HTML Geolocation API is used to locate a users position
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+// Handling Errors and Rejections
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+</script>
+
+
+
